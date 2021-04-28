@@ -1,7 +1,8 @@
 **Team Project
 
 Social Media app
-**NAME: KwikOZ 
+**NAME: KwikOZ
+**TAGLINE:  Share your life here... 
 
 *Landing Page  (MVP)
  - Logon  (MVP)
