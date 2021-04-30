@@ -49,8 +49,13 @@ logout - get
 validate user for delete/edit btn
 vailidate new user input - check if unique
 
+**MongoDB
+mongodb+srv://kwikOZAdmin:<ADMINNAME>@cluster0.194bn.mongodb.net/<ADMINPW>?retryWrites=true&w=majority
 
-
-
+DB = KwikOZDB
+Collections:
+ - Posts
+ - Sessions
+ - Users
 
 
