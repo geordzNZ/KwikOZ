@@ -25,7 +25,6 @@ route.get('/newsfeed', (req, res) =>{
 
 
 
-route.post('')
 
 
 module.exports = route
