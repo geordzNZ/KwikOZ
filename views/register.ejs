@@ -1,4 +1,4 @@
-<div class="row mt-5">
+<!-- <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
       <h1 class="text-center mb-3">
@@ -14,7 +14,7 @@
             name="name"
             class="form-control"
             placeholder="Enter Name"
-            value="<%= typeof name != 'undefined' ? name : '' %>"
+            value=""
           />
         </div>
         <div class="form-group">
@@ -25,7 +25,7 @@
             name="email"
             class="form-control"
             placeholder="Enter Email"
-            value="<%= typeof email != 'undefined' ? email : '' %>"
+            value=""
           />
         </div>
         <div class="form-group">
@@ -36,7 +36,7 @@
             name="password"
             class="form-control"
             placeholder="Create Password"
-            value="<%= typeof password != 'undefined' ? password : '' %>"
+            value=""
           />
         </div>
         <div class="form-group">
@@ -47,7 +47,7 @@
             name="password2"
             class="form-control"
             placeholder="Confirm Password"
-            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            value=""
           />
         </div>
         <button type="submit" class="btn btn-primary btn-block">
@@ -57,4 +57,46 @@
       <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
     </div>
   </div>
-</div>
+</div> -->
+
+<section class="Form my-4 mx0">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-lg-5">
+        <img src="https://i.imgur.com/3XL2XtW.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-7 px-5 pt-5">
+        <h1>KwikOz</h1>
+        <h4>Join the Party! Create an account!!</h4>
+        <%- include('partials/messages') -%>
+        <form action="/users/register" method="POST">
+          <div class="form-row">
+            <div class="col-lg-7">
+              <input type="name" class="form-control my-2 p-2" name="name" value="<%= typeof name != 'undefined' ? name : '' %>" placeholder="Full Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <input type="email" class="form-control my-2 p-2" value="<%= typeof email != 'undefined' ? email : '' %>" name="email" placeholder="Email Address">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <input type="password" class="form-control my-2 p-2" name="password" value="<%= typeof password != 'undefined' ? password : '' %>" placeholder="*******">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <input type="password" class="form-control my-2 p-2" name="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" placeholder="*******">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <button type="submit" name="button" class="btn1 mt-3 mb-5">Create Account</button>
+            </div>
+          </div>
+          <p>Already have an account? <a href="/users/login">Click Here to login</a></p>
+        </form>
+      </div>
+    </div>
+</section>
