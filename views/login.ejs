@@ -1,0 +1,31 @@
+<section class="Form my-4 mx0">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-lg-5">
+        <img src="https://i.imgur.com/3XL2XtW.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-7 px-5 pt-5">
+        <h1>KwikOz</h1>
+        <h4>Share your life here...</h4>
+        <%- include('partials/messages') -%>
+        <form action="/users/login" method="POST">
+          <div class="form-row">
+            <div class="col-lg-7">
+              <input type="email" class="form-control my-2 p-2" name="email" placeholder="Email Address">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <input type="password" class="form-control my-2 p-2"  name="password" placeholder="*******">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <button type="submit" class="btn1 mt-3 mb-5">Login</button>
+            </div>
+          </div>
+          <p>Don't have an account? <a href="/users/register">Register Here</a></p>
+        </form>
+      </div>
+    </div>
+</section>

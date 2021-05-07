@@ -1,6 +1,7 @@
 
 const express = require('express')
-const router= express.Router()
+const router = express.Router()
+const { ensureAuthenticated } = require('../controllers/auth')
 
 
 const homeController = require("../controllers/home");
@@ -29,15 +30,16 @@ router.get('/signup', authController.getSignUp)
 // Personal profile page
 router.get('/personalprofile', (req, res) =>{
   res.render('personalprofile')
+//Landing page
+router.get('/', (req, res) => {
+  res.render('welcome')
 })
 
-//News feed page
-router.get('/newsfeed', (req, res) =>{
-  res.render('newsfeed')
+//dashboard
+router.get('/personalprofile', ensureAuthenticated, (req, res) => {
+  res.render('personalprofile', {
+    name: req.user.name
+  })
 })
-
-
-
-
 
 module.exports = router
