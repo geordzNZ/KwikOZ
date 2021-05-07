@@ -1,13 +1,14 @@
 const express = require('express')
+const session = require("express-session");
+//const MongoStore = require("connect-mongo")(session);
 const morgan = require('morgan')
 const ejs = require('ejs')
 
-// -GK
 const dotenv = require('dotenv')
   dotenv.config({ path: './config/.env' })
 
-const connectDB = require('./config/db')
-  connectDB()
+// const connectDB = require('./config/db')
+//   connectDB()
 
 
 //Routes - GK
@@ -27,14 +28,14 @@ app.use('/', require('./routes/index'))
 const PORT = process.env.PORT || 3000
 
 // Setup Sessions - stored in MongoDB - GK
-app.use(
-  session({
-    secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  })
-);
+// app.use(
+//   session({
+//     secret: "keyboard cat",
+//     resave: false,
+//     saveUninitialized: false,
+//     store: new MongoStore({ mongooseConnection: mongoose.connection }),
+//   })
+// );
 
 
 //Routes - GK

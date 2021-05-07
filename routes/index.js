@@ -1,3 +1,4 @@
+
 const express = require('express')
 const router= express.Router()
 
@@ -11,17 +12,18 @@ const authController = require("../controllers/auth");
 // })
 router.get('/', homeController.getIndex)
 
+
 //Signin page
 // router.get('/signin', (req, res) =>{
 //   res.render('signin')
 // })
-router.get('/', authController.getSignIn)
+router.get('/signin', authController.getSignIn)
 
 //Signup page
 // router.get('/signup', (req, res) =>{
 //   res.render('signup')
 // })
-router.get('/', authController.getSignUp)
+router.get('/signup', authController.getSignUp)
 
 
 // Personal profile page

@@ -7,9 +7,9 @@ const User = require("../models/User");
 // ELSE goto Sign In page
 // ---------------------------------
 exports.getSignIn = (req, res) => {
-  if (req.user) { 
-    return res.redirect("/newsfeed.ejs");
-  }
+  // if (req.user) { 
+  //   return res.redirect("/newsfeed.ejs");
+  // }
   res.render("signin", {
     title: "Sign In for the fun to begin",
   });
@@ -31,10 +31,11 @@ exports.getSignIn = (req, res) => {
 // IF already logged in then goto newsfeed page
 // ELSE goto Sign Up page
 // ---------------------------------
+console.log('before sign up')
 exports.getSignUp = (req, res) => {
-  if (req.user) { 
-    return res.redirect("/newsfeed.ejs");
-  }
+  // if (req.user) { 
+  //   return res.redirect("/newsfeed.ejs");
+  // }
   res.render("signup", {
     title: "Sign Up for an Account",
   });
@@ -48,12 +49,12 @@ exports.getSignUp = (req, res) => {
 //      - ERROR ==> Respond with errors / update UI as needed (reload page??)
 
 
-const user = new User({
-  userID: req.body.userName,
-  emailAddr: req.body.email,
-  fullName: req.body.fullName,
-  password: req.body.password,
-});
+// const user = new User({
+//   userID: req.body.userName,
+//   emailAddr: req.body.email,
+//   fullName: req.body.fullName,
+//   password: req.body.password,
+// });
 
 // TODO:
 // - postSignUp form - Save to DB and then login
@@ -69,14 +70,14 @@ const user = new User({
 // Kill the session
 // Redirect to home page
 // ---------------------------------
-exports.logout = (req, res) => {
-  req.logout();
-  req.session.destroy((err) => {
-    if (err)
-      console.log("Error : Failed to destroy the session during logout.", err);
-    req.user = null;
-    res.redirect("/");
-  });
-};
+// exports.logout = (req, res) => {
+//   req.logout();
+//   req.session.destroy((err) => {
+//     if (err)
+//       console.log("Error : Failed to destroy the session during logout.", err);
+//     req.user = null;
+//     res.redirect("/");
+//   });
+// };
 
-// ========== 2) LOGOUT ==============================>
+// ========== 3) LOGOUT ==============================>
