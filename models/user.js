@@ -5,38 +5,27 @@
 // - createdOn ->  calc'd / req / date
 // - userID -> calc'd / req / string / unique
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-  userID: {
+  name:{
     type: String,
-    required: true,
+    required: true
   },
-  emailAddr: {
+  email:{
     type: String,
-    require: true,
+    required: true
   },
-  fullName: {
+  password:{
     type: String,
-    require: true,
+    required: true
   },
-  details: {
-    type: String,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  createdOn: {
+  date:{
     type: Date,
-    default: Date.now,
-  },
-  // avatarImg: {
-  //   type: string,
-  // },
-});
+    default: Date.now
+  }
+})
 
+const User = mongoose.model('User', UserSchema)
 
-
-
-module.exports = mongoose.model("User", UserSchema);
+module.exports = User
