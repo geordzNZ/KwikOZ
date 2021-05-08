@@ -161,14 +161,16 @@ exports.getSignUp = (req, res) => {
 //     res.redirect("/");
 //   });
 // };
-
 // ========== 3) LOGOUT ==============================>
-module.exports = {
-  ensureAuthenticated: function(req, res, next) {
-    if(req.isAuthenticated()){
-      return next()
-    }
-    req.flash('error_msg', 'Please log-in to view this resource')
-    res.redirect('/users/login')
-  }
-}
+
+
+// --- GKXX - commented out this section to get working
+// module.exports = {
+//   ensureAuthenticated: function(req, res, next) {
+//     if(req.isAuthenticated()){
+//       return next()
+//     }
+//     req.flash('error_msg', 'Please log-in to view this resource')
+//     res.redirect('/users/login')
+//   }
+// }
