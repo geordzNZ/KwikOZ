@@ -95,6 +95,8 @@ exports.getSignIn = (req, res) => {
   });
 };
 
+
+
 // TODO:
 // - postSignIn form - Vaildation
 //      - Validate data
@@ -111,7 +113,7 @@ exports.getSignIn = (req, res) => {
 // IF already logged in then goto newsfeed page
 // ELSE goto Sign Up page
 // ---------------------------------
-console.log('before sign up')
+
 exports.getSignUp = (req, res) => {
   // if (req.user) { 
   //   return res.redirect("/newsfeed.ejs");
